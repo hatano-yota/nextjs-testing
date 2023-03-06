@@ -52,10 +52,10 @@ const Layout: React.FC<TITLE> = ({ children, title = 'Nextjs' }) => {
                   Context
                 </a>
               </Link>
-              <Link href="/todos-page">
+              <Link href="/task-page">
                 <a
                   href=""
-                  data-testid="todos-nav"
+                  data-testid="task-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
                 >
                   Todos
