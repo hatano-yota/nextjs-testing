@@ -18,7 +18,7 @@ const axiosFetcher = async () => {
 
 const TaskPage: React.FC<STATICPROPS> = ({ staticTasks }) => {
   const { data: tasks, error } = useSWR('todosFetch', axiosFetcher, {
-    initialData: staticTasks,
+    fallbackData: staticTasks,
     revalidateOnMount: true,
   })
   if (error) return <span>Error!</span>
