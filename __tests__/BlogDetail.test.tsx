@@ -12,9 +12,10 @@ import userEvent from '@testing-library/user-event'
 
 initTestHelpers()
 const handlers = [
-  rest.get(
-    'https://jsonplaceholder.typicode.com/posts/?_limit=10',
-    (req, res, ctx) => {
+  rest.get('https://jsonplaceholder.typicode.com/posts/', (req, res, ctx) => {
+    const query = req.url.searchParams
+    const _limit = query.get('_limit')
+    if (_limit === '10') {
       return res(
         ctx.status(200),
         ctx.json([
@@ -33,7 +34,7 @@ const handlers = [
         ])
       )
     }
-  ),
+  }),
   rest.get('https://jsonplaceholder.typicode.com/posts/1', (req, res, ctx) => {
     return res(
       ctx.status(200),

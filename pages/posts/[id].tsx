@@ -29,7 +29,7 @@ const PostDetail: React.FC<POST> = ({ id, title, body }) => {
               d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
             />
           </svg>
-          <a data-testId="back-blog">Back to blog-page</a>
+          <a data-testid="back-blog">Back to blog-page</a>
         </div>
       </Link>
     </Layout>
